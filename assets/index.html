@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Simple login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style type="text/css">
+      button{margin-right: 10px; }
+      a{text-decoration: none;color: white;}
+      a:hover{text-decoration: none;color: white;}
+      .users{border: 1px solid #d8cfcf;padding: 10px;margin: 20px;border-radius: 5px;}
+      #display_users{margin-left: 180px;}
+      #buttons{margin-top: 6px;text-align: center;}
+      .email, .mobile{margin-left: 56px;}
+      .name{text-transform: capitalize;margin-left: 56px;}
+      #user_success{margin-left: 326px;color: green;font-weight: bold;}
+      #user_failure{margin-left: 326px;color: red;font-weight: bold;}
+     </style>
+  </head>
+  <body>
+    <h1 style="text-align: center;">REGISTRATION</h1>
+    <div class="container" style="margin-left: 200px;">
+      <form class="form-horizontal" id="first_form" method="post">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="user">FIRST NAME:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="user" placeholder="Enter Your Name" name="firstname">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">EMAIL:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="email" placeholder="Enter Your Email" name="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="mobile">MOBILE NUMBER:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="mobile" placeholder="Enter Your Mobile Number" name="mobile">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="password">PASSWORD:</label>
+          <div class="col-sm-5">
+            <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password">
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-sm-5">
+             <input type="button" id="submit" value="SUBMIT" class="btn btn-success" style="width: 100px;">
+            </div>
+        </div>
+      </form>
+      <div id="err_msg"></div>
+    </div>
+    <div>
+      <h2 style="text-align: center;color: #b98181;">USERS LIST</h2>
+      <div id="display_users"></div>
+    </div>
+    
+  </body>
+<script type="text/javascript" src="./client.js"></script>
+</html>
+

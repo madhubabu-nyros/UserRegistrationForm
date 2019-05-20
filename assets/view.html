@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Details</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<style type="text/css">
+		a{text-decoration: none;color: white;}
+      a:hover{text-decoration: none;color: white;}
+      #view{border: 1px solid #d8cfcf;padding: 10px;border-radius: 5px;width: 272px;margin-bottom: 10px;}
+      #error{color: red;text-align: center;margin-top: 50px;font-size: 20px;}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div id="None">
+		<h3 style="color: #d84343;">User Details</h3>
+		<div id="view"></div>
+		<button class="btn btn-primary"><a href="http://10.90.90.71:5000">Back</a></button>
+	</div>
+	<div id="error"></div>
+</div>	
+<script type="text/javascript">
+	    getUserDetails();
+		function getUserDetails(){
+        	var url_string = window.location.href
+			var url = new URL(url_string);
+			var id = url.searchParams.get("id");
+			var data={_id:id};
+		    console.log("data",data)
+			fetch('/getUserDetails', {method: 'POST',headers: {'Accept': 'application/json, text/plain, */*', 'Content-Type': 'application/json'},dataType:'json',body:JSON.stringify(data)})
+			.then(function(responce){
+				return responce.json();
+			}) 
+			.then (function(myJson){
+				var res = JSON.stringify(myJson);
+				var result4 = JSON.parse(res);
+				var users="";
+				if(result4.status===200){
+					users+= '<div class="user_name"><b>User Name:</b>'+result4.data.name+'</div><div><b>Email:</b>'+result4.data.email+'</div><div><b>Mobile Number:</b>'+result4.data.mobile+'</div>';
+					document.getElementById('view').innerHTML= users;
+				}else {
+					document.getElementById("None").style.display = "none";
+					document.getElementById("error").innerHTML = result4.message;
+				}	
+			})
+
+		}
+	</script>
+</body>
+</html>
