@@ -80,7 +80,6 @@ function delete_users(mobile) {
       } else { 
         return false;
       } 
-     
 }
 
   

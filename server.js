@@ -22,6 +22,7 @@ MongoClient.connect(url,(err, database) =>
 app.get('/',function(req,res){
   res.sendFile(__dirname+"index.html");
 });
+
 app.use(cors());
 app.post('/createUser',function(req,res){
     var user_name=req.body.name;
