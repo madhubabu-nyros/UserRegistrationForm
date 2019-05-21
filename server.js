@@ -57,6 +57,7 @@ app.post('/createUser',function(req,res){
     });
 
 })
+
 app.post('/getUsers',(req, res) => {
   db.collection('userdetails').find({}).toArray(function(err, result) {
       if(err) {
@@ -75,6 +76,7 @@ app.post('/getUsers',(req, res) => {
       
   })
 })
+
 app.post('/deleteUsers',(req, res) => {
     console.log("deleteUsers:");
     console.log("req.body:",req.body)
@@ -115,6 +117,7 @@ app.post('/deleteUsers',(req, res) => {
 app.get('/user_details',function(req,res){
   res.sendFile(__dirname+"/assets/view.html");
 });
+
 app.post('/getUserDetails', (req, res) => {
   var id = req.body._id;
   db.collection('userdetails').findOne({_id:ObjectId(id)}, function(err, result) {
