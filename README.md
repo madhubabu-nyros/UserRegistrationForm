@@ -1,0 +1,4 @@
+- git clone https://github.com/madhubabu-nyros/UserRegistrationForm
+- cd UserRegistrationForm
+- install nodejs
+- node server.js
