@@ -82,11 +82,5 @@ function delete_users(mobile) {
       } 
      
 }
-// function update_userdetails(_id){
-//   var data = {_id:_id}
-//   fetch('/updateUsers', {method: 'POST',headers: {'Accept': 'application/json, text/plain, */*',
-//       'Content-Type': 'application/json'},dataType:'json', body:JSON.stringify(data)})
-
-// }
 
   
