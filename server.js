@@ -136,12 +136,6 @@ app.post('/getUserDetails', (req, res) => {
       
   })
 })
-// app.post('/updateUsers', function(req, res){
-//   var id = req.body._id;
-//   db.collection('userdetails').findOne({_id:ObjectId(id)}, function(err, result) {
-//      db.collection('userdetails').update      
-//   })
-// }) 
 
 app.listen(5000,function(){
   console.log("Started on PORT 5000");
